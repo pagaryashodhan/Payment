@@ -88,7 +88,7 @@ if (isVerifySignature) {
                             .catch(()=>console.log("Unable to update"))
                         }
 
-                        res.redirect(`http://localhost:3000/status/${result.ORDERID}`)
+                        res.redirect(`https://pccoeieee.org/status/${result.ORDERID}`)
 
 
             });

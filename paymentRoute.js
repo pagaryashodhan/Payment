@@ -138,7 +138,7 @@ params['INDUSTRY_TYPE_ID'] = process.env.PAYTM_INDUSTRY_TYPE_ID,
 params['ORDER_ID'] = uuidv4(),
 params['CUST_ID'] = process.env.PAYTM_CUST_ID,
 params['TXN_AMOUNT'] = totalAmount,
-params['CALLBACK_URL'] = 'http://localhost:5001/api/callback',
+params['CALLBACK_URL'] = 'http://payments.pccoeieee.org/api/callback',
 params['EMAIL'] =email,
 params['MOBILE_NO'] = '9876543210'
 

@@ -19,27 +19,12 @@ const form=new formidable.IncomingForm();
 
 form.parse(req,(err,fields,file)=>
 {
-    
-
-
-
-
-
-
-
 
 paytmChecksum = fields.CHECKSUMHASH;
 delete fields.CHECKSUMHASH;
 
 var isVerifySignature = PaytmChecksum.verifySignature(fields, process.env.PAYTM_MERCHANT_KEY, paytmChecksum);
 if (isVerifySignature) {
-
-
-
-
-
-
-
 
     var paytmParams = {};
     paytmParams["MID"]     = fields.MID;
@@ -58,10 +43,10 @@ if (isVerifySignature) {
         var options = {
     
             /* for Staging */
-            hostname: 'securegw-stage.paytm.in',
-    
-            /* for Production */
             // hostname: 'securegw.paytm.in',
+    
+            
+         hostname: 'securegw.paytm.in',
     
             port: 443,
             path: '/order/status',
@@ -138,7 +123,7 @@ params['INDUSTRY_TYPE_ID'] = process.env.PAYTM_INDUSTRY_TYPE_ID,
 params['ORDER_ID'] = uuidv4(),
 params['CUST_ID'] = process.env.PAYTM_CUST_ID,
 params['TXN_AMOUNT'] = totalAmount,
-params['CALLBACK_URL'] = 'http://payments.pccoeieee.org/api/callback',
+params['CALLBACK_URL'] = 'https://payments.pccoeieee.org/api/callback',
 params['EMAIL'] =email,
 params['MOBILE_NO'] = '9876543210'
 

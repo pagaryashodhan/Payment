@@ -46,8 +46,7 @@ if (isVerifySignature) {
             // hostname: 'securegw.paytm.in',
     
             
-         hostname: 'securegw.paytm.in',
-    
+            hostname: 'securegw.paytm.in',
             port: 443,
             path: '/order/status',
             method: 'POST',
@@ -67,12 +66,10 @@ if (isVerifySignature) {
                          let result=JSON.parse(response)
                         if(result.STATUS==='TXN_SUCCESS')
                         {
-                            //store in db
                             db.collection('payments').doc('mPDd5z0pNiInbSIIotfj').update({paymentHistory:firebase.firestore.FieldValue.arrayUnion(result)})
                             .then(()=>console.log("Update success"))
                             .catch(()=>console.log("Unable to update"))
                         }
-
                         res.redirect(`https://pccoeieee.org/status/${result.ORDERID}`)
 
 
